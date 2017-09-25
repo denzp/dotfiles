@@ -66,6 +66,7 @@ label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
+label-urgent-foreground = #000
 label-urgent-background = ${colors.primary}
 label-urgent-padding = 2
 
@@ -126,8 +127,9 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
+thermal-zone = 2
+interval = 2
+warn-temperature = 75
 
 format = <ramp> <label>
 format-warn = <ramp> <label-warn>

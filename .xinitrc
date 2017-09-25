@@ -1,3 +1,6 @@
+numlockx
+udiskie --smart-tray --use-udisks2 &
+
 export TERMINAL=alacritty
 
 export GDK_SCALE=1.3
@@ -6,6 +9,6 @@ export CLUTTER_SCALE=1.3
 
 xrandr --dpi 125
 xrandr --output DVI-D-0	--scale 2x2 --mode 1920x1080 --pos 0x0 --fb 1920x1080
-xrandr --output DP-0 	--scale 1x1 --mode 3840x2160 --pos 1920x0
+xrandr --output DP-0 	--scale 1x1 --mode 3840x2160 --pos 1920x0 --primary
 
 exec i3
