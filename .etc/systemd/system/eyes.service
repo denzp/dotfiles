@@ -1,0 +1,8 @@
+[Unit]
+Description=Reminder to relax eyes
+
+[Service]
+User=den
+Environment="DISPLAY=:0"
+Type=oneshot
+ExecStart=/usr/bin/i3-nagbar -t warning -f "pango:monospace 15" -m "Don't forget to relax your eyes"
