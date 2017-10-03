@@ -1,0 +1,14 @@
+[Unit]
+Description=Kill processes with initialized CUDA before sleep
+Before=sleep.target
+StopWhenUnneeded=yes
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/zsh -c 'nvidia-smi pmon -c 1 | awk \'$3 == "C" { system("kill -9 " $2) }\''
+ExecStart=/usr/bin/systemctl stop nvidia-docker.service
+ExecStop=/usr/bin/systemctl start nvidia-docker.service
+
+[Install]
+WantedBy=sleep.target
