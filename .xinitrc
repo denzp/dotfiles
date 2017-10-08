@@ -1,5 +1,4 @@
 numlockx
-udiskie --smart-tray --use-udisks2 &
 
 export TERMINAL=alacritty
 

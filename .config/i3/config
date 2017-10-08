@@ -16,7 +16,7 @@ floating_modifier $mod
 
 # kill focused window
 bindsym $mod+Shift+q kill
- 
+
 # start a terminal
 bindsym $mod+Return exec "alacritty"
 
@@ -117,7 +117,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+exec_always --no-startup-id "dunst"
 exec_always --no-startup-id "nitrogen --restore"
+exec_always --no-startup-id "udiskie --smart-tray --use-udisks2"
+
 exec_always --no-startup-id "$HOME/.config/compton/launch.sh"
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
