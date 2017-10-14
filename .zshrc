@@ -48,6 +48,10 @@ fi
 source $ZSH/oh-my-zsh.sh
 source $ZSH/custom/themes/spaceship.zsh-theme
 
+for file in ~/.zshrc.d/*; do
+    source "$file"
+done
+
 # Spaceship theme settings
 SPACESHIP_PROMPT_ORDER=(
   time
