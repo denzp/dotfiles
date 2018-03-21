@@ -1,13 +1,17 @@
-numlockx
+numlockx &
+redshift &
 
+dbus-update-activation-environment --systemd DISPLAY
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+
+export SSH_AUTH_SOCK
 export TERMINAL=alacritty
 
-export GDK_SCALE=1.3
-export GDK_DPI_SCALE=1.3
-export CLUTTER_SCALE=1.3
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
-xrandr --dpi 155
-xrandr --output DVI-D-0 --mode 1920x1080
-xrandr --output DP-0    --mode 3840x2160 --primary --right-of DVI-D-0
+xrdb -merge ~/.Xresources
+xrandr --dpi 144
+xrandr --output DP-2 --mode 3840x2160
+xrandr --output DP-0 --mode 3840x2160 --right-of DP-2 --primary
 
 exec i3

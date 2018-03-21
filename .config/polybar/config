@@ -19,8 +19,11 @@ secondary = #e62323
 [bar/DP-0]
 include-file = /home/den/.config/polybar/bars/DP-0.conf
 
-[bar/DVI-D-0]
-include-file = /home/den/.config/polybar/bars/DVI-D-0.conf
+[bar/DP-2]
+include-file = /home/den/.config/polybar/bars/DP-2.conf
+
+[bar/LVDS-1]
+include-file = /home/den/.config/polybar/bars/LVDS-1.conf
 
 [module/xkeyboard]
 type = internal/xkeyboard
