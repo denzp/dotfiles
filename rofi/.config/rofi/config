@@ -1,0 +1,8 @@
+rofi.color-enabled:                  true
+rofi.color-normal:                   #00000000, #eeeeee, #00000000, #ffffff, #222222
+rofi.color-window:                   #99434865
+rofi.separator-style:                solid
+rofi.hide-scrollbar:                 true
+rofi.fullscreen:                     false
+rofi.padding:                        20
+rofi.font:                           monospace 25

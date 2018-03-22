@@ -1,0 +1,8 @@
+[Unit]
+Description=Reminder to relax eyes
+
+[Service]
+User=den
+Environment="DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus"
+Type=oneshot
+ExecStart=/usr/bin/notify-send "Don't forget to relax your eyes."
