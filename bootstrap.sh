@@ -1,8 +1,15 @@
 #!/bin/sh
 
-sudo pacman --needed -S stow rustup npm xorg xorg-xinit numlockx redshift rofi i3-gaps gnome-keyring dunst powerline-fonts ttf-font-awesome ttf-dejavu ttf-liberation wget feh firefox-developer-edition compton zsh pulseaudio
+sudo pacman --needed -S stow rustup npm xorg xorg-xinit numlockx redshift   \
+                        rofi i3-gaps gnome-keyring dunst powerline-fonts    \
+                        ttf-font-awesome ttf-dejavu ttf-liberation wget feh \
+                        firefox-developer-edition compton zsh pulseaudio
 
 stow --no-folding alacritty compton dunst fontconfig i3 polybar rofi systemd teiler zsh wallpapers
+
+systemctl enable --user eyes.timer
+systemctl enable --user kill-cuda-before-sleep
+systemctl enable --user no-wakeup-on-usb
 
 if [ "$SHELL" != "/bin/zsh" ]; then
     chsh -s /bin/zsh
