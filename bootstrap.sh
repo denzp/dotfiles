@@ -2,8 +2,11 @@
 
 sudo pacman --needed -S stow rustup npm xorg xorg-xinit numlockx redshift rofi i3-gaps gnome-keyring dunst powerline-fonts ttf-font-awesome ttf-dejavu ttf-liberation wget feh firefox-developer-edition compton zsh pulseaudio
 
-chsh -s /bin/zsh
 stow --no-folding alacritty compton dunst fontconfig i3 polybar rofi systemd teiler zsh wallpapers
+
+if [ "$SHELL" != "/bin/zsh" ]; then
+    chsh -s /bin/zsh
+fi
 
 if [ ! -x "$(command -v pb)" ]; then
     git clone https://aur.archlinux.org/pkgbuilder.git /tmp/pkgbuilder
@@ -40,4 +43,10 @@ fi
 
 if [ ! -x "$(command -v code)" ]; then
     pb -S visual-studio-code-bin
+fi
+
+if [ ! -x "$(command -v teiler)" ]; then
+    pb -S teiler-git
+    mkdir -p ~/Pictures/Screenshots
+    mkdir -p ~/Videos/Screencasts
 fi
