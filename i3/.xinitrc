@@ -11,8 +11,13 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_SCALE_FACTOR=1
 
 xrdb -merge ~/.Xresources
-xrandr --dpi 144
-xrandr --output DP-2 --mode 3840x2160
-xrandr --output DP-0 --mode 3840x2160 --right-of DP-2 --primary
 
-exec i3
+if [ -f ~/.xinitrc.local/$(hostname) ]; then
+    source ~/.xinitrc.local/$(hostname)
+fi
+
+if [ -f ~/.Xresources.local/$(hostname) ]; then
+    xrdb -merge ~/.Xresources.local/$(hostname)
+fi
+
+exec ~/.bin/launch-i3.sh

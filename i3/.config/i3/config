@@ -21,7 +21,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Return exec "alacritty"
 
 # start rofi
-bindsym $mod+d exec "rofi -show run"
+bindsym $mod+d exec "rofi -show run -font 'monospace $rofi-font-size'"
 
 # screenshots and screencast
 bindsym Print exec --no-startup-id "teiler --quick image fullscreen"
@@ -77,9 +77,9 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c exec ~/.bin/confgen-i3.sh && i3-msg reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r exec ~/.bin/confgen-i3.sh && i3-msg restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -110,11 +110,14 @@ exec_always --no-startup-id "$HOME/.bin/launch-compton.sh"
 exec_always --no-startup-id "$HOME/.bin/launch-polybar.sh"
 exec_always --no-startup-id "$HOME/.bin/launch-feh.sh"
 
-exec "setxkbmap -layout de,ru -option 'grp:win_space_toggle'"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-mute 0 0 && pactl set-sink-volume 0 +10%"
+bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-mute 0 0 && pactl set-sink-volume 0 -10%"
+bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle"
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -q sset Master 10%+ unmute"
-bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q sset Master 10%- unmute"
-bindsym XF86AudioMute exec --no-startup-id "amixer -q sset Master toggle"
+bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 20"
+bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 20"
 
-gaps inner 24
-new_window pixel 4
+# class                 border  bground text    indicator child_border
+client.focused          #000000 #000000 #FFFFFF #E1A587   #826B78
+client.focused_inactive #000000 #000000 #FFFFFF #1C191E   #1C191E
+client.unfocused        #000000 #000000 #FFFFFF #1C191E   #1C191E

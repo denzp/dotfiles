@@ -99,37 +99,26 @@ date = %Y-%m-%d
 time = %H:%M
 label = %date% %time%
 
-;  - clock
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 
-[module/volume]
-type = internal/volume
+[module/pulseaudio]
+type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
-label-volume = " "
+format-volume = <label-volume> 
+format-muted = <label-muted>
+
+label-volume = "%percentage%%"
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = muted
+format-volume-prefix = " "
+format-volume-prefix-foreground = ${colors.foreground-alt}
 
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+label-muted = "muted"
+label-muted-foreground = ${colors.foreground-alt}
+
+format-muted-prefix = " "
+format-muted-prefix-foreground = ${colors.foreground-alt}
 
 [module/temperature]
 type = internal/temperature
@@ -141,8 +130,8 @@ format = <ramp> <label>
 format-warn = <ramp> <label-warn>
 format-warn-underline = #f50a4d
 
-label = %temperature%
-label-warn = %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 
@@ -198,6 +187,3 @@ ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
-
-[settings]
-screenchange-reload = true
