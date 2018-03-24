@@ -110,11 +110,11 @@ exec_always --no-startup-id "$HOME/.bin/launch-compton.sh"
 exec_always --no-startup-id "$HOME/.bin/launch-polybar.sh"
 exec_always --no-startup-id "$HOME/.bin/launch-feh.sh"
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-mute 0 0 && pactl set-sink-volume 0 +10%"
-bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-mute 0 0 && pactl set-sink-volume 0 -10%"
-bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "$HOME/.bin/pactl-default.sh set-sink-volume +10%"
+bindsym XF86AudioLowerVolume exec --no-startup-id "$HOME/.bin/pactl-default.sh set-sink-volume -10%"
+bindsym XF86AudioMute        exec --no-startup-id "$HOME/.bin/pactl-default.sh set-sink-mute toggle"
 
-bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 20"
+bindsym XF86MonBrightnessUp   exec --no-startup-id "xbacklight -inc 20"
 bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 20"
 
 # class                 border  bground text    indicator child_border
