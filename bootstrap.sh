@@ -57,3 +57,7 @@ if [ ! -x "$(command -v teiler)" ]; then
     mkdir -p ~/Pictures/Screenshots
     mkdir -p ~/Videos/Screencasts
 fi
+
+if [ ! -x "$(command -v udiskie)" ]; then
+    pb -S udiskie
+fi
