@@ -1,10 +1,5 @@
 # Path to your oh-my-zsh installation.
-ZSH=/usr/share/oh-my-zsh/
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
+ZSH=/usr/share/oh-my-zsh
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
@@ -36,21 +31,32 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git cargo)
+plugins=(git cargo minikube kubectl)
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
 
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 source $ZSH/oh-my-zsh.sh
-source $ZSH/custom/themes/spaceship.zsh-theme
 
 for file in $HOME/.zshrc.d/*(N); do
   source "$file"
 done
+
+# https://stackoverflow.com/a/50103965/926352
+function precmd() {
+    # Print a newline before the prompt, unless it's the
+    # first prompt in the process.
+    if [ -z "$NEW_LINE_BEFORE_PROMPT" ]; then
+        NEW_LINE_BEFORE_PROMPT=1
+    elif [ "$NEW_LINE_BEFORE_PROMPT" -eq 1 ]; then
+        echo ""
+    fi
+}
+
+autoload -U promptinit; promptinit
+prompt spaceship
 
 # Spaceship theme settings
 SPACESHIP_PROMPT_ORDER=(
@@ -70,6 +76,7 @@ SPACESHIP_PROMPT_ORDER=(
   char
 )
 
+SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_TIME_SHOW=true
 
 SPACESHIP_EXIT_CODE_SHOW=true
@@ -78,4 +85,3 @@ SPACESHIP_EXIT_CODE_SUFFIX=") "
 
 SPACESHIP_EXEC_TIME_SHOW=true
 SPACESHIP_EXEC_TIME_ELAPSED=1
-

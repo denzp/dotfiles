@@ -1,9 +1,0 @@
-[Unit]
-Description=Reminder to relax eyes
-
-[Timer]
-OnCalendar=*:0/30
-Persistent=true
-
-[Install]
-WantedBy=multi-user.target

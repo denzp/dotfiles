@@ -1,5 +1,3 @@
-teiler/.config/teiler/profiles
 teiler/.config/teiler/uploader
 
 systemd/.config/systemd/user/multi-user.target.wants
-systemd/.config/systemd/user/sleep.target.wants

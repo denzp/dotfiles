@@ -102,9 +102,11 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+bindsym $mod+n exec --no-startup-id "flash_window"
 
 exec_always --no-startup-id "dunst"
 exec_always --no-startup-id "udiskie --smart-tray --use-udisks2"
+exec_always --no-startup-id "flashfocus"
 
 exec_always --no-startup-id "$HOME/.bin/launch-compton.sh"
 exec_always --no-startup-id "$HOME/.bin/launch-polybar.sh"
