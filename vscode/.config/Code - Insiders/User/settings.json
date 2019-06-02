@@ -1,0 +1,20 @@
+{
+    "explorer.openEditors.visible": 0,
+    "editor.renderWhitespace": "boundary",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "tslint.autoFixOnSave": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "explorer.confirmDelete": false,
+    "rust.target_dir": "target/rls",
+    "files.encoding": "utf8",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "window.titleBarStyle": "native",
+    "window.menuBarVisibility": "toggle",
+    "breadcrumbs.enabled": true,
+    "breadcrumbs.symbolSortOrder": "type",
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "window.zoomLevel": 0,
+    "editor.formatOnSave": true,
+    "workbench.colorTheme": "Ayu Mirage"
+}
