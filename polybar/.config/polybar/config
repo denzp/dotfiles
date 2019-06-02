@@ -25,11 +25,8 @@ include-file = $HOME/.config/polybar/bars/DP-0.conf
 [bar/DP-2]
 include-file = $HOME/.config/polybar/bars/DP-2.conf
 
-[bar/LVDS-1]
-include-file = $HOME/.config/polybar/bars/LVDS-1.conf
-
-[bar/VGA-1]
-include-file = $HOME/.config/polybar/bars/VGA-1.conf
+[bar/LVDS1]
+include-file = $HOME/.config/polybar/bars/LVDS1.conf
 
 [module/xkeyboard]
 type = internal/xkeyboard
