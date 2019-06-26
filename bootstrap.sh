@@ -48,8 +48,8 @@ if [ ! -x "$(command -v polybar)" ]; then
     pb -S polybar-git
 fi
 
-if [ ! -x "$(command -v code-insiders)" ]; then
-    pb -S visual-studio-code-insiders
+if [ ! -x "$(command -v code)" ]; then
+    pb -S visual-studio-code-bin
 fi
 
 if [ ! -x "$(command -v teiler)" ]; then
