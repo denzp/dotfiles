@@ -1,5 +1,5 @@
-encopts="     -r 30 -c:v libx264 -pix_fmt yuv420p -s $res -movflags frag_keyframe+empty_moov+default_base_moof -c:a libvorbis"
-rect_encopts="-r 30 -c:v libx264 -pix_fmt yuv420p -crf 16 -movflags frag_keyframe+empty_moov+default_base_moof -c:a libvorbis"
+encopts="     -r 30 -c:v h264_nvenc -pix_fmt yuv420p -profile:v high -s $res -movflags +faststart"
+rect_encopts="-r 30 -c:v h264_nvenc -pix_fmt yuv420p -profile:v high -movflags +faststart"
 
 border="-show_region 1"
 ext="mp4"
