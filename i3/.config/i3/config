@@ -83,6 +83,12 @@ bindsym $mod+Shift+r exec ~/.bin/confgen-i3.sh && i3-msg restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+# disable resizing with a mouse
+bindsym --border button1 nop
+bindsym --border button3 nop
+bindsym --whole-window $mod+button1 nop
+bindsym --whole-window $mod+button3 nop
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -107,19 +113,20 @@ bindsym $mod+n exec --no-startup-id "flash_window"
 exec_always --no-startup-id "dunst"
 exec_always --no-startup-id "udiskie --smart-tray --use-udisks2"
 exec_always --no-startup-id "flashfocus"
+exec_always --no-startup-id "redshift-gtk -l 52.5200:13.4050"
+exec_always --no-startup-id "feh --bg-fill $HOME/.wallpapers/iceland.jpg"
 
 exec_always --no-startup-id "$HOME/.bin/launch-compton.sh"
 exec_always --no-startup-id "$HOME/.bin/launch-polybar.sh"
-exec_always --no-startup-id "$HOME/.bin/launch-feh.sh"
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id "$HOME/.bin/pactl-default.sh set-sink-volume +10%"
 bindsym XF86AudioLowerVolume exec --no-startup-id "$HOME/.bin/pactl-default.sh set-sink-volume -10%"
 bindsym XF86AudioMute        exec --no-startup-id "$HOME/.bin/pactl-default.sh set-sink-mute toggle"
 
-bindsym XF86MonBrightnessUp   exec --no-startup-id "xbacklight -inc 20"
-bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 20"
+bindsym XF86MonBrightnessUp   exec --no-startup-id "xbacklight -inc 10"
+bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 10"
 
 # class                 border  bground text    indicator child_border
-client.focused          #826B78 #826B78 #FFFFFF #E1A587   #826B78
-client.focused_inactive #1C191E #1C191E #FFFFFF #1C191E   #1C191E
-client.unfocused        #1C191E #1C191E #FFFFFF #1C191E   #1C191E
+client.focused          #826B78 #826B78 #FFFFFF #BBEEEE   #709090
+client.focused_inactive #1C191E #1C191E #FFFFFF #000000   #000000
+client.unfocused        #1C191E #1C191E #FFFFFF #000000   #000000

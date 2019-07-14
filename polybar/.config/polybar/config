@@ -11,10 +11,10 @@
 pseudo-transparency = false
 
 [colors]
-transparent = #00000000
+transparent = #35000000
 background = #99000000
 background-alt = #00000000
-foreground = #ddd
+foreground = #eee
 foreground-alt = #999
 primary = #ffb52a
 secondary = #e62323

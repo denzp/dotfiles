@@ -2,7 +2,6 @@
     "explorer.openEditors.visible": 0,
     "editor.renderWhitespace": "boundary",
     "diffEditor.ignoreTrimWhitespace": false,
-    "tslint.autoFixOnSave": true,
     "workbench.iconTheme": "material-icon-theme",
     "explorer.confirmDelete": false,
     "rust.target_dir": "target/rls",
@@ -12,9 +11,12 @@
     "window.titleBarStyle": "native",
     "window.menuBarVisibility": "toggle",
     "breadcrumbs.enabled": true,
-    "breadcrumbs.symbolSortOrder": "type",
+    "breadcrumbs.symbolSortOrder": "name",
     "C_Cpp.clang_format_fallbackStyle": "LLVM",
     "window.zoomLevel": 0,
     "editor.formatOnSave": true,
-    "workbench.colorTheme": "Ayu Mirage"
+    "workbench.colorTheme": "Ayu Mirage",
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 15
 }
