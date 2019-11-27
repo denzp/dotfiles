@@ -44,44 +44,4 @@ for file in $HOME/.zshrc.d/*(N); do
   source "$file"
 done
 
-# https://stackoverflow.com/a/50103965/926352
-function precmd() {
-    # Print a newline before the prompt, unless it's the
-    # first prompt in the process.
-    if [ -z "$NEW_LINE_BEFORE_PROMPT" ]; then
-        NEW_LINE_BEFORE_PROMPT=1
-    elif [ "$NEW_LINE_BEFORE_PROMPT" -eq 1 ]; then
-        echo ""
-    fi
-}
-
-autoload -U promptinit; promptinit
-prompt spaceship
-
-# Spaceship theme settings
-SPACESHIP_PROMPT_ORDER=(
-  time
-  user
-  host
-  dir
-  git
-  node
-  elixir
-  rust
-  docker
-  aws
-  exec_time
-  line_sep
-  exit_code
-  char
-)
-
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_TIME_SHOW=true
-
-SPACESHIP_EXIT_CODE_SHOW=true
-SPACESHIP_EXIT_CODE_PREFIX="("
-SPACESHIP_EXIT_CODE_SUFFIX=") "
-
-SPACESHIP_EXEC_TIME_SHOW=true
-SPACESHIP_EXEC_TIME_ELAPSED=1
+eval "$(starship init zsh)"

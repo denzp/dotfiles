@@ -18,5 +18,10 @@
     "workbench.colorTheme": "Ayu Mirage",
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
-    "editor.fontSize": 15
+    "editor.fontSize": 15,
+    "workbench.useExperimentalGridLayout": true,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "scm.defaultViewMode": "tree",
+    "C_Cpp.updateChannel": "Insiders",
+    "git.autofetch": true,
 }

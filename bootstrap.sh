@@ -3,9 +3,10 @@
 sudo pacman --needed -S stow rustup npm xorg xorg-xinit numlockx redshift   \
                         rofi i3-gaps gnome-keyring dunst powerline-fonts    \
                         ttf-font-awesome ttf-dejavu ttf-liberation wget feh \
-                        firefox-developer-edition zsh pulseaudio alacritty
+                        firefox-nightly zsh pulseaudio alacritty
 
-stow --no-folding alacritty compton dunst fontconfig i3 polybar rofi systemd teiler zsh wallpapers vscode
+stow --no-folding alacritty compton dunst fontconfig i3 polybar rofi systemd teiler zsh \
+                  wallpapers vscode spaceship
 
 systemctl enable --user kill-cuda-before-sleep
 systemctl enable --user no-wakeup-on-usb
@@ -50,6 +51,10 @@ fi
 
 if [ ! -x "$(command -v code)" ]; then
     pb -S visual-studio-code-bin
+fi
+
+if [ ! -x "$(command -v starship)" ]; then
+    pb -S starship
 fi
 
 if [ ! -x "$(command -v teiler)" ]; then
