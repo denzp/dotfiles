@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+set -euo pipefail
 
 DEFAULT_SINK_NAME=$(pacmd info | grep "Default sink name" | cut -d":" -f2)
 

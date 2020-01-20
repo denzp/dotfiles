@@ -122,6 +122,7 @@ exec_always --no-startup-id "$HOME/.bin/launch-polybar.sh"
 bindsym XF86AudioRaiseVolume exec --no-startup-id "$HOME/.bin/pactl-default.sh set-sink-volume +10%"
 bindsym XF86AudioLowerVolume exec --no-startup-id "$HOME/.bin/pactl-default.sh set-sink-volume -10%"
 bindsym XF86AudioMute        exec --no-startup-id "$HOME/.bin/pactl-default.sh set-sink-mute toggle"
+bindsym XF86AudioPlay        exec --no-startup-id "$HOME/.bin/pactl-toggle-bluetooth-profile.sh"
 
 bindsym XF86MonBrightnessUp   exec --no-startup-id "xbacklight -set $(xbacklight -get | awk '{ print 2.0 * $1 >= 100 ? 100 : 2.0 * $1 }')"
 bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -set $(xbacklight -get | awk '{ print 0.5 * $1 <= 1   ? 1   : 0.5 * $1 }')"
