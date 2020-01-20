@@ -3,7 +3,8 @@
 sudo pacman --needed -S stow rustup npm xorg xorg-xinit numlockx redshift   \
                         rofi i3-gaps gnome-keyring dunst powerline-fonts    \
                         ttf-font-awesome ttf-dejavu ttf-liberation wget feh \
-                        firefox-nightly zsh pulseaudio alacritty
+                        firefox-nightly zsh pulseaudio alacritty \
+                        zsh-syntax-highlighting zsh-autosuggestions
 
 stow --no-folding alacritty compton dunst fontconfig i3 polybar rofi systemd teiler zsh \
                   wallpapers vscode spaceship
@@ -29,8 +30,8 @@ if [ ! -d /usr/share/oh-my-zsh ]; then
     pb -S oh-my-zsh-git
 fi
 
-if [ ! -d /usr/lib/spaceship-prompt ]; then
-    pb -S spaceship-prompt-git
+if [ ! -x "$(command -v starship)" ]; then
+    pb -S starship
 fi
 
 if [ ! -x "$(command -v compton)" ]; then
