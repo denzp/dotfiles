@@ -19,4 +19,4 @@ if [ -f ~/.Xresources.local/$(hostname) ]; then
     xrdb -merge ~/.Xresources.local/$(hostname)
 fi
 
-exec ~/.bin/launch-i3.sh
+i3 -c ~/.config/i3/config

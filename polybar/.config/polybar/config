@@ -11,12 +11,12 @@
 pseudo-transparency = false
 
 [colors]
-transparent = #35000000
-background = #99000000
+transparent = #35ffffff
+background = #99ffffff
 background-alt = #00000000
-foreground = #eee
-foreground-alt = #999
-primary = #ffb52a
+foreground = #111
+foreground-alt = #555
+primary = #00b52a
 secondary = #e62323
 
 [bar/DP-0]
@@ -51,13 +51,13 @@ enable-click = false
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-foreground = #fff
+label-focused-foreground = ${colors.foreground}
 label-focused-padding = 2
 label-focused-font = 2
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-foreground = #b0b0b0
+label-unfocused-foreground = ${colors.foreground-alt}
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor

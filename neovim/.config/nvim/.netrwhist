@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/den/work/datahub/app/js/memberships/components'
+let g:netrw_dirhist_0='/home/den/work/datahub/app/js/memberships/modals'
+let g:netrw_dirhist_9='/home/den/.dotfiles/polybar/.config'
+let g:netrw_dirhist_8='/home/den/.dotfiles/polybar/.config/polybar'
+let g:netrw_dirhist_7='/home/den/.dotfiles/polybar/.config'
+let g:netrw_dirhist_6='/home/den/.dotfiles/polybar'
+let g:netrw_dirhist_5='/home/den/.dotfiles/i3/.config/i3/config.local'
+let g:netrw_dirhist_4='/home/den/.dotfiles/compton/.config/compton'
+let g:netrw_dirhist_3='/home/den/.dotfiles/compton/.config'
+let g:netrw_dirhist_2='/home/den/.dotfiles/compton'

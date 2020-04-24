@@ -1,0 +1,9 @@
+[Unit]
+Description=udiskie
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/udiskie --smart-tray
+
+[Install]
+WantedBy=i3-session.target

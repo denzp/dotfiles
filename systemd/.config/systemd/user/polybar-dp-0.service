@@ -1,0 +1,9 @@
+[Unit]
+Description=polybar on DP-0
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/polybar DP-0
+
+[Install]
+WantedBy=i3-session.target

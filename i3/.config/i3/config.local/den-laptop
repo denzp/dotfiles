@@ -1,6 +1,0 @@
-set $rofi-font-size 16
-
-exec "setxkbmap -layout en,ru -option 'grp:win_space_toggle'"
-
-gaps inner 6
-new_window pixel 4

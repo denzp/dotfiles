@@ -1,0 +1,9 @@
+[Unit]
+Description=Set a keayboard map
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/setxkbmap -layout de,ru -option 'grp:win_space_toggle'
+
+[Install]
+WantedBy=i3-session.target

@@ -14,26 +14,23 @@ env:
   # `infocmp xterm-256color`.
   TERM: xterm-256color
 
-# Display tabs using this many cells (changes require restart)
-tabspaces: 8
-
 # When true, bold text is drawn using the bright variant of colors.
-draw_bold_text_with_bright_colors: true
+# draw_bold_text_with_bright_colors: true
 
 # Font configuration (changes require restart)
 font:
   normal:
-    family: 'DejaVu Sans Mono'
+    family: 'DejaVu Sans Mono Nerd Font'
     style: Book
 
   # The bold font face
   bold:
-    family: 'DejaVu Sans Mono'
+    family: 'DejaVu Sans Mono Nerd Font'
     style: Bold
 
   # The italic font face
   italic:
-    family: 'DejaVu Sans Mono'
+    family: 'DejaVu Sans Mono Nerd Font'
     style: Oblique
 
   # Point size of the font
@@ -49,8 +46,8 @@ font:
   # the default being at the bottom. Increase the x offset to move the glyph to
   # the right, increase the y offset to move the glyph upward.
   glyph_offset:
-    x: -1
-    y: -1
+    x: 0
+    y: 0
 
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
@@ -97,7 +94,7 @@ visual_bell:
   color: '0xffffff'
 
 # Background opacity
-background_opacity: 0.75
+background_opacity: 0.85
 
 # Key bindings
 #

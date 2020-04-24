@@ -10,6 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
+new_window pixel 2
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -18,10 +19,10 @@ floating_modifier $mod
 bindsym $mod+Shift+q kill
 
 # start a terminal
-bindsym $mod+Return exec "alacritty"
+bindsym $mod+Return exec "$HOME/.bin/launch-terminal.sh"
 
 # start rofi
-bindsym $mod+d exec "rofi -show run -font 'monospace $rofi-font-size'"
+bindsym $mod+d exec "rofi -show drun"
 
 # screenshots and screencast
 bindsym Print exec --no-startup-id "teiler --quick image fullscreen"
@@ -77,9 +78,11 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
-bindsym $mod+Shift+c exec ~/.bin/confgen-i3.sh && i3-msg reload
+bindsym $mod+Shift+c exec i3-msg reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r exec ~/.bin/confgen-i3.sh && i3-msg restart
+bindsym $mod+Shift+r exec i3-msg restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -89,35 +92,22 @@ bindsym --border button3 nop
 bindsym --whole-window $mod+button1 nop
 bindsym --whole-window $mod+button3 nop
 
-# resize window (you can also use the mouse for that)
+# These bindings trigger as soon as you enter the resize mode
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
-bindsym $mod+n exec --no-startup-id "flash_window"
 
-exec_always --no-startup-id "dunst"
-exec_always --no-startup-id "udiskie --smart-tray --use-udisks2"
-exec_always --no-startup-id "flashfocus"
-exec_always --no-startup-id "redshift-gtk -l 52.5200:13.4050"
-exec_always --no-startup-id "feh --bg-fill $HOME/.wallpapers/iceland.jpg"
-
-exec_always --no-startup-id "$HOME/.bin/launch-compton.sh"
-exec_always --no-startup-id "$HOME/.bin/launch-polybar.sh"
+# Start systemd user target that have most of the auxilary services
+exec --no-startup-id "systemctl --user start i3-session.target"
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id "$HOME/.bin/pactl-default.sh set-sink-volume +10%"
 bindsym XF86AudioLowerVolume exec --no-startup-id "$HOME/.bin/pactl-default.sh set-sink-volume -10%"
@@ -128,6 +118,6 @@ bindsym XF86MonBrightnessUp   exec --no-startup-id "xbacklight -set $(xbacklight
 bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -set $(xbacklight -get | awk '{ print 0.5 * $1 <= 1   ? 1   : 0.5 * $1 }')"
 
 # class                 border  bground text    indicator child_border
-client.focused          #826B78 #826B78 #FFFFFF #BBEEEE   #709090
+client.focused          #1C191E #826B78 #FFFFFF #BBEEEE   #101010
 client.focused_inactive #1C191E #1C191E #FFFFFF #000000   #000000
 client.unfocused        #1C191E #1C191E #FFFFFF #000000   #000000

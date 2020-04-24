@@ -1,0 +1,10 @@
+configuration {
+    modi: "drun";
+    theme: "DarkBlue";
+    font: "DejaVu Sans Mono Nerd Font 15";
+    width: 800;
+}
+
+#scrollbar {
+    handle-color: @normal-foreground;
+}
