@@ -76,7 +76,3 @@ fi
 if [ ! -f "/usr/share/fonts/TTF/DejaVu-Sans-Mono-Nerd-Font-Complete-Mono.ttf" ]; then
     pb -S nerd-fonts-dejavu-complete
 fi
-
-if [ ! -d "/usr/share/vim-plug" ]; then
-    pb -S vim-plug
-fi

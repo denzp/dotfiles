@@ -2,13 +2,16 @@ set encoding=UTF-8
 set number
 set updatetime=100
 
+" fallback for vim to use be compatible with neovim config
+set runtimepath+=~/.config/nvim
+
 " auto-install vim-plug
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
     silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall
 endif
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -30,8 +33,8 @@ if !empty(glob('~/.config/nvim/plugged/onedark.vim'))
     colorscheme onedark
 endif
 
-highlight Normal ctermbg=none
-highlight Normal guibg=none
+highlight Normal ctermbg=NONE
+highlight Normal guibg=NONE
 
 " airline config
 let g:airline#extensions#tabline#enabled=1
