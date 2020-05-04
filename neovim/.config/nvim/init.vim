@@ -2,21 +2,24 @@ set encoding=UTF-8
 set number
 set updatetime=100
 
+" auto-install vim-plug
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Yggdroot/indentLine'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'liuchengxu/vista.vim'
 call plug#end()
 
 let g:onedark_terminal_italics=1
@@ -61,7 +64,9 @@ set expandtab
 
 let mapleader=' '
 
-command! -nargs=0 Format :call CocAction('format')
+nmap <leader>f          :call CocAction('format')<CR>
+nmap <leader>gs         :GitGutterStageHunk<CR>
+nmap <leader>gr         :GitGutterUndoHunk<CR>
 
 nmap <leader>n          :NERDTreeToggle<CR>
 nmap <leader>rn         <Plug>(coc-rename)
