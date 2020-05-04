@@ -4,8 +4,8 @@ set updatetime=100
 
 " auto-install vim-plug
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -25,8 +25,10 @@ call plug#end()
 let g:onedark_terminal_italics=1
 set termguicolors
 
-syntax on
-colorscheme onedark
+if !empty(glob('~/.config/nvim/plugged/onedark.vim'))
+    syntax on
+    colorscheme onedark
+endif
 
 highlight Normal ctermbg=none
 highlight Normal guibg=none
