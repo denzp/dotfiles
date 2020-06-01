@@ -23,6 +23,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'Yggdroot/indentLine'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
 let g:onedark_terminal_italics=1
@@ -60,6 +61,10 @@ let g:indentLine_leadingSpaceChar='·'
 let g:NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeChDirMode=2
 let g:NERDTreeMinimalUI=1
+
+" NERDCommenter config
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
 
 " Indentation setup
 set smartindent
