@@ -1,40 +1,31 @@
-prompt_order = [
-    "time",
-    "username",
-    "hostname",
-    "kubernetes",
-    "directory",
-    "git_branch",
-    "git_state",
-    "git_status",
-    "package",
-    "dotnet",
-    "golang",
-    "java",
-    "nodejs",
-    "python",
-    "ruby",
-    "rust",
-    "nix_shell",
-    "conda",
-    "memory_usage",
-    "aws",
-    "env_var",
-    "cmd_duration",
-    "line_break",
-    "jobs",
-    "battery",
-    "character",
-]
+format = """
+$time\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$nodejs\
+$python\
+$rust\
+$nix_shell\
+$conda\
+$memory_usage\
+$env_var\
+$cmd_duration\
+$line_break\
+$character\
+"""
 
 [character]
-symbol = "➜"
-error_symbol = "✗"
-use_symbol_for_status = true
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
 
 [directory]
 truncation_length = 8
 
 [time]
 disabled = false
-format = "%T"
+time_format = "%T"
+format = "[$time]($style) "
