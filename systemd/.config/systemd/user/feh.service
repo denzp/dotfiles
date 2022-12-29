@@ -1,9 +1,0 @@
-[Unit]
-Description=feh
-PartOf=graphical-session.target
-
-[Service]
-ExecStart=/bin/zsh -c 'feh --bg-fill $HOME/.wallpapers/ruegen.png'
-
-[Install]
-WantedBy=i3-session.target

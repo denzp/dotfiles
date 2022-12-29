@@ -1,9 +1,0 @@
-[Unit]
-Description=polybar on LVDS1
-PartOf=graphical-session.target
-
-[Service]
-ExecStart=/usr/bin/polybar LVDS1
-
-[Install]
-WantedBy=i3-session.target

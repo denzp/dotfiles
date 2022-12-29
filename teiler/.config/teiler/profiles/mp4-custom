@@ -1,6 +1,0 @@
-encopts="     -r 30 -c:v h264_nvenc -pix_fmt yuv420p -profile:v high -s $res -movflags +faststart"
-rect_encopts="-r 30 -c:v h264_nvenc -pix_fmt yuv420p -profile:v high -movflags +faststart"
-
-border="-show_region 1"
-ext="mp4"
-ffaudio=""

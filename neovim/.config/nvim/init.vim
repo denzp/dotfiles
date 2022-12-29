@@ -72,18 +72,52 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+autocmd Filetype hcl setlocal ts=2 sw=2
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 let mapleader=' '
+
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 
 nmap <leader>f          :call CocAction('format')<CR>
 nmap <leader>gs         :GitGutterStageHunk<CR>
 nmap <leader>gr         :GitGutterUndoHunk<CR>
 
-nmap <leader>n          :NERDTreeToggle<CR>
+nmap <leader>a          <Plug>(coc-fix-current)
 nmap <leader>rn         <Plug>(coc-rename)
 nmap <leader>g<up>      <Plug>(coc-diagnostic-prev)
 nmap <leader>g<down>    <Plug>(coc-diagnostic-next)
+
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+
+nnoremap c "_c
+nnoremap C "_C
+vnoremap c "_c
+
+nnoremap <leader>d ""d
+nnoremap <leader>D ""D
+vnoremap <leader>d ""d
+
+nnoremap <leader>c ""c
+nnoremap <leader>C ""C
+vnoremap <leader>c ""c
+
+vnoremap <leader>y "+y
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+nnoremap <leader>y "+y
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
 
 nnoremap <C-p>      :Files<CR>
 nnoremap <C-g>      :Rg<CR>
 nnoremap <Tab>      :bnext!<CR>
 nnoremap <S-Tab>    :bprevious!<CR>
+
+noremap <F5> :IndentLinesToggle<CR>
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "<CR>"
+inoremap <silent><expr> <c-space> coc#refresh()

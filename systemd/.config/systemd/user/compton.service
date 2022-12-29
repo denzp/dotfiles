@@ -1,9 +1,0 @@
-[Unit]
-Description=compton
-PartOf=graphical-session.target
-
-[Service]
-ExecStart=/bin/zsh -c 'compton --config $HOME/.config/compton/config'
-
-[Install]
-WantedBy=i3-session.target
