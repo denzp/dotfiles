@@ -2,7 +2,7 @@
 
 sudo pacman --needed -S stow rustup npm gnome-keyring powerline-fonts wget \
                         wofi sway waybar mako pipewire wireplumber alacritty neovim \
-                        ttf-font-awesome ttf-dejavu ttf-liberation \
+                        ttf-font-awesome ttf-dejavu ttf-liberation ttf-dejavu-nerd \
                         zsh zsh-syntax-highlighting zsh-autosuggestions \
                         grim slurp wf-recorder xdg-user-dirs starship
 
@@ -30,18 +30,19 @@ if [ ! -x "$(command -v pb)" ]; then
     rm -rf /tmp/pkgbuilder
 fi
 
-if [ ! -d /usr/share/oh-my-zsh ]; then
+if ! pacman -Qi oh-my-zsh-git 2>/dev/null 1>/dev/null; then
     pb -S oh-my-zsh-git
 fi
 
-if [ ! -x "$(command -v pulsemixer)" ]; then
+if ! pacman -Qi mpris-proxy-service 2>/dev/null 1>/dev/null; then
+    pb -S mpris-proxy-service
+    systemctl --user enable mpris-proxy
+fi
+
+if ! pacman -Qi pulsemixer 2>/dev/null 1>/dev/null; then
     pb -S pulsemixer
 fi
 
-if [ ! -x "$(command -v udiskie)" ]; then
+if ! pacman -Qi udiskie 2>/dev/null 1>/dev/null; then
     pb -S udiskie
-fi
-
-if [ ! -f "/usr/share/fonts/TTF/DejaVu-Sans-Mono-Nerd-Font-Complete-Mono.ttf" ]; then
-    pb -S nerd-fonts-dejavu-complete
 fi

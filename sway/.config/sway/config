@@ -23,16 +23,33 @@ bar {
 output * bg ~/.wallpapers/ruegen.png fill
 
 output eDP-1 {
-    resolution 3840x2160
-    scale 2.0
+    # resolution 3840x2160
+    scale 1.0
     scale_filter smart
 }
 
 output "Goldstar Company Ltd LG Ultra HD 0x000035D6" {
     resolution 3840x2160@60Hz
+    position 3840 0
+}
+output "LG Electronics LG Ultra HD 0x000431D6" {
+    resolution 3840x2160@60Hz
+    position 3840 0
+}
+output "LG Electronics LG Ultra HD 0x000035D6" {
+    resolution 3840x2160@60Hz
+    position 3840 0
 }
 
 output "Goldstar Company Ltd LG Ultra HD 0x00000E04" {
+    position 0 0
+    resolution 3840x2160@60Hz
+}
+output "LG Electronics LG Ultra HD 0x00060E04" {
+    position 0 0
+    resolution 3840x2160@60Hz
+}
+output "LG Electronics LG Ultra HD 0x00000E04" {
     position 0 0
     resolution 3840x2160@60Hz
 }
@@ -54,6 +71,8 @@ exec swayidle -w \
 bindsym $mod+Escape exec  ~/.bin/lock.sh
 for_window [app_id="vlc"] inhibit_idle fullscreen
 for_window [app_id="firefox"] inhibit_idle fullscreen
+
+exec_always 'if grep -q open /proc/acpi/button/lid/LID/state; then swaymsg output eDP-1 enable; else swaymsg output eDP-1 disable; fi'
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

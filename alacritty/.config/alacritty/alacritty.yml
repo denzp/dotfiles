@@ -23,17 +23,17 @@ import:
 # Font configuration (changes require restart)
 font:
   normal:
-    family: 'DejaVu Sans Mono Nerd Font'
+    family: 'DejaVuSansM Nerd Font'
     style: Book
 
   # The bold font face
   bold:
-    family: 'DejaVu Sans Mono Nerd Font'
+    family: 'DejaVuSansM Nerd Font'
     style: Bold
 
   # The italic font face
   italic:
-    family: 'DejaVu Sans Mono Nerd Font'
+    family: 'DejaVuSansM Nerd Font'
     style: Oblique
 
   # Offset is the extra space around each character. offset.y can be thought of
