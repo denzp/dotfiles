@@ -20,11 +20,10 @@ bar {
     swaybar_command waybar
 }
 
-output * bg ~/.wallpapers/ruegen.png fill
+output * bg ~/.wallpapers/iceland-1.jpg fill
 
 output eDP-1 {
-    # resolution 3840x2160
-    scale 1.0
+    scale 1.25
     scale_filter smart
 }
 
@@ -62,7 +61,7 @@ exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 exec gammastep-indicator -l 52:13
-exec /usr/bin/libinput-gestures
+exec libinput-gestures-setup start
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec swayidle -w \
     timeout 300 '~/.bin/lock.sh' \
@@ -72,7 +71,10 @@ bindsym $mod+Escape exec  ~/.bin/lock.sh
 for_window [app_id="vlc"] inhibit_idle fullscreen
 for_window [app_id="firefox"] inhibit_idle fullscreen
 
-exec_always 'if grep -q open /proc/acpi/button/lid/LID/state; then swaymsg output eDP-1 enable; else swaymsg output eDP-1 disable; fi'
+bindswitch lid:on exec ~/.bin/lid-event.sh
+bindswitch lid:off exec ~/.bin/lid-event.sh
+
+exec_always "gsettings set org.gnome.desktop.interface text-scaling-factor 1.2"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

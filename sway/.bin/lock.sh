@@ -11,4 +11,4 @@ swaylock \
   --line-color 00000000 \
   --inside-color 00000088 \
   --separator-color 00000000 \
-  --image "~/.wallpapers/ruegen.png"
+  --image "~/.wallpapers/iceland-1.jpg"
