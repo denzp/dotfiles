@@ -15,8 +15,15 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%Y-%m-%d %H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "format": "{:%Y-%m-%d %H:%M %Z}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "timezones": [
+            "Europe/Berlin",
+            "America/New_York"
+        ],
+        "actions": {
+            "on-click": "tz_up"
+        },
     },
     "cpu": {
         "format": "{usage}% ",

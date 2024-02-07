@@ -13,6 +13,7 @@ sudo pacman --needed -S stow rustup npm gnome-keyring powerline-fonts wget \
 stow --no-folding alacritty fontconfig zsh wallpapers starship neovim sway waybar \
                   wofi
 
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 systemctl enable --now --user pipewire pipewire-pulse wireplumber xdg-desktop-portal-wlr
 
 xdg-user-dirs-update
