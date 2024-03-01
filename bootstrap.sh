@@ -24,14 +24,22 @@ if [ "$SHELL" != "/bin/zsh" ]; then
     chsh -s /bin/zsh
 fi
 
+if ! pacman -Qi asp 2>/dev/null 1>/dev/null; then
+    rm -rf /tmp/asp
+    git clone https://aur.archlinux.org/asp.git /tmp/asp
+
+    pushd /tmp/asp
+    makepkg -si --skippgpcheck
+    popd
+fi
+
 if [ ! -x "$(command -v pb)" ]; then
+    rm -rf /tmp/pkgbuilder
     git clone https://aur.archlinux.org/pkgbuilder.git /tmp/pkgbuilder
 
     pushd /tmp/pkgbuilder
     makepkg -si
-
     popd
-    rm -rf /tmp/pkgbuilder
 fi
 
 if ! pacman -Qi oh-my-zsh-git 2>/dev/null 1>/dev/null; then
