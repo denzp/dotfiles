@@ -14,14 +14,27 @@ return {
             require("telescope").setup({
                 pickers = {
                     find_files = {
-                        hidden = true,
                         mappings = {
                             i = {
                                 ["<Esc>"] = "close",
                             },
                         },
                     },
-                    live_grep  = {
+                    live_grep = {
+                        mappings = {
+                            i = {
+                                ["<Esc>"] = "close",
+                            },
+                        },
+                    },
+                    buffers = {
+                        mappings = {
+                            i = {
+                                ["<Esc>"] = "close",
+                            },
+                        },
+                    },
+                    help_tags = {
                         mappings = {
                             i = {
                                 ["<Esc>"] = "close",
@@ -32,7 +45,6 @@ return {
                 defaults = {
                     vimgrep_arguments = {
                         "rg",
-                        "--hidden",
                         "--color=never",
                         "--no-heading",
                         "--with-filename",
